@@ -1,0 +1,45 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+* {
+    box-sizing: border-box;
+}
+
+.center-items {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.has-margin-top {
+    margin-top: 3rem;
+}
+@media (max-width: 1024px) {
+    .has-margin-top {
+        margin-top: 1.5rem;
+    }
+}
+
+.hero-bg-img {
+    background-image: url("../images/book-hero.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+}
+
+.has-shadow {
+    box-shadow: 0 0 5px 0 #778899;
+}
+
+.has-margin-bottom {
+    margin-bottom: 0.75rem;
+}
+
+.homepage-tile {
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
