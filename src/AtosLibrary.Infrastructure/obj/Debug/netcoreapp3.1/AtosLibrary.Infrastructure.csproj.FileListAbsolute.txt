@@ -1,9 +1,0 @@
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\bin\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.deps.json
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\bin\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.dll
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\bin\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.pdb
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\obj\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.csprojAssemblyReference.cache
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\obj\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\obj\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.AssemblyInfo.cs
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\obj\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.csproj.CoreCompileInputs.cache
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\obj\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.dll
-C:\Users\kasia\Desktop\Job_search\AtosLibrary\atoslibrary-kasia-bucka\src\AtosLibrary.Infrastructure\obj\Debug\netcoreapp3.1\AtosLibrary.Infrastructure.pdb
