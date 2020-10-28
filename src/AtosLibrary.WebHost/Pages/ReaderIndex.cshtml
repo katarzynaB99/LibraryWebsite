@@ -1,0 +1,102 @@
+﻿@page "{SearchString?}"
+@model AtosLibrary.WebHost.ReaderIndexModel
+@{
+    ViewData["Title"] = "Reader List | Atos Library - Best books in the world";
+}
+
+<section class="section has-margin-top">
+    <!-- Headline and search -->
+    <div class="container">
+        <div class="level">
+            <!-- Left side -->
+            <div class="level-left">
+                <div class="level-item">
+                    <h1 class="title">Reader Index</h1>
+                </div>
+            </div>
+
+            <!-- Right side -->
+            <div class="level-right">
+                <div class="level-item">
+                    <form asp-page-handler="Search" method="post">
+                        <div class="field has-addons is-marginless">
+                            <p class="control">
+                                <input class="input" asp-for="SearchString" type="search" placeholder="Search..."/>
+                            </p>
+                            <p class="control">
+                                <button class="button is-info" type="submit">
+                                    <span class="icon">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div class="level-item">
+                    <a class="button is-success" asp-page="/CreateReaderList">
+                        <span class="icon">
+                            <i class="fa fa-plus"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ReaderList table -->
+    <div class="container">
+        <form method="post">
+            <div class="table-container">
+                <table class="table is-hoverable is-fullwidth">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                        <th>Country</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var contact in Model.Readers)
+                    {
+                        <tr>
+                            <td>@contact.Name</td>
+                            <td>@contact.Surname</td>
+                            <td>@contact.Email</td>
+                            <td>@contact.Country</td>
+                            <td>
+                                <div class="buttons are-small">
+                                    <!-- Rent book for this reader button -->
+                                    <a class="button is-info is-uppercase" asp-page="" asp-route-id="@contact.Id">
+                                        Rent book
+                                    </a>
+                                    <!-- View reader profile button -->
+                                    <a class="button is-light" asp-page="/ViewReader" asp-route-id="@contact.Id">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-eye"></i>
+                                        </span>
+                                    </a>
+                                    <!-- Edit reader details button -->
+                                    <a class="button is-info" asp-page="/EditReader" asp-route-id="@contact.Id">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-edit"></i>
+                                        </span>
+                                    </a>
+                                    <!-- Delete reader button -->
+                                    <button class="button is-danger" type="submit" asp-page-handler="delete" asp-route-id="@contact.Id">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-trash"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <a asp-page="/CreateReader">Create New</a>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,97 @@
+﻿@page "{SearchString?}"
+@model ActiveRentalsIndexModel
+@{
+    ViewData["Title"] = "Homepage | Atos Library - Best books in the world";
+}
+
+    <section class="section has-margin-top">
+        <!-- Headline and search -->
+        <div class="container">
+            <div class="level">
+                <!-- Left side -->
+                <div class="level-left">
+                    <div class="level-item">
+                        <h1 class="title">
+                            Records Log
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="level-right">
+                    <div class="level-item">
+                        <form asp-page-handler="Search" method="post">
+                            <div class="field has-addons is-marginless">
+                                <p class="control">
+                                    <input class="input" asp-for="SearchString" type="search" placeholder="Search..." />
+                                </p>
+                                <p class="control">
+                                    <button class="button is-info" type="submit">
+                                        <span class="icon">
+                                            <i class="fa fa-search"></i>
+                                        </span>
+                                    </button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Record Log table-->
+            <form method="post">
+                <div class="table-container">
+                    <table class="table is-hoverable is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Reader Name</th>
+                                <th>Reader Surname</th>
+                                <th>Book</th>
+                                <th>Status</th>
+                                <th>Rent Start</th>
+                                <th>Rent End</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var record in Model.Records)
+                            {
+                                <tr>
+                                    <td>@record.ReaderName</td>
+                                    <td>@record.ReaderSurname</td>
+                                    <td>@record.BookName</td>
+                                    <td>@record.Status</td>
+                                    @if (record.RentStart is null)
+                                    {
+                                        <td> </td>
+                                        <td> </td>
+                                    }
+                                    else
+                                    {
+                                        <td>@record.RentStart.Value.ToShortDateString()</td>
+                                        <td>@record.RentEnd.Value.ToShortDateString()</td>
+                                    }
+                                    <td>
+                                        <div class="buttons are-small">
+                                            <!-- View record -->
+                                            <a class="button is-light" asp-page="/ViewRecord" asp-route-id="@record.RecordId">
+                                                <span class="icon is-small">
+                                                    <i class="fa fa-eye"></i>
+                                                </span>
+                                            </a>
+                                            <!-- Return book -->
+                                            <button class="button is-info is-uppercase" type="submit" asp-page-handler="return" asp-route-id="@record.RecordId">
+                                                Return book
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </section>

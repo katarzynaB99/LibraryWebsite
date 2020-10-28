@@ -1,0 +1,265 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Homepage | Atos Library - Best books in the world";
+}
+
+
+<!-- Hero banner -->
+<section class="hero is-large hero-bg-img has-margin-top">
+    <div class="hero-body">
+        <div class="container ">
+            <h1 class="title has-text-white is-1 center-items">
+                Welcome to Atos Library
+            </h1>
+            <h2 class="subtitle has-text-grey-lighter is-5 center-items is-capitalized">
+                THE BEST ONLINE BOOK LIBRARY IN THE WORLD
+            </h2>
+        </div>
+    </div>
+</section>
+
+<!-- Using the library -->
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-child box homepage-tile">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-book fa-2x"></i>
+                            </span>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-size-5">Borrow books</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box homepage-tile">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-copy fa-2x"></i>
+                            </span>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-size-5">See our assets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box homepage-tile">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-plus fa-2x"></i>
+                            </span>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-size-5">Add your books</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box homepage-tile">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-users fa-2x"></i>
+                            </span>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-size-5">See the users</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent news -->
+<section class="section has-background-light">
+    <div class="container">
+        <p class="title has-text-centered">Recent News</p> <br/>
+    </div>
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-half">
+                <div class="notification is-white">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image">
+                                <img src="~/images/hugo-awards.jpg" style="width:130px;" />
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="is-size-5 has-text-weight-semibold">
+                                2020 Hugo Awards Finalists
+                            </p>
+                            <p class="is-size-7 has-text-grey-light is-italic">
+                                Anja Webb, Apr 10, 2020
+                            </p>
+                            <p class="is-size-6">
+                                The 2020 Hugo Awards finalists were recently announced, and several titles were previously covered in LJ and SLJ. The following list offers plenty of inspiration for sff reading.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column is-half">
+                <div class="notification is-white">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image">
+                                <img src="~/images/new-books.png" style="width:130px;"/>
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="is-size-5 has-text-weight-semibold">
+                                Hot off the Presses! New BookLists This Week
+                            </p>
+                            <p class="is-size-7 has-text-grey-light is-italic">
+                                Kiera Parrott, Apr 07, 2020
+                            </p>
+                            <p class="is-size-6">
+                                Looking for your next great read? Here’s a list of brand-new fiction, memoirs, cookbooks, and more, publishing this week—and all are available.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured books-->
+<section class="section">
+    <div class="container">
+        <p class="title has-text-centered">Featured BookLists</p> <br/>
+    </div>
+    <div class="container">
+        <div class="columns center-items">
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-1.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless has-top-bottom-margin">
+                        CSS. Witryny internetowe szyte na miarę.
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Charles Wyke-Smith
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-2.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        UXUI. Design Zoptymalizowany. Manual BookList
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Chris Badura
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-3.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        Logo Design Love. Tworzenie genialnych logotypow
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        David Airey
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-4.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        HTML i CSS. Zaprojektuj i zbuduj witryne WWW. Podrecznik Front-End Developera
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Jon Duckett
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="columns center-items">
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-5.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        JavaScript i jQuery. Interaktywne strony WWW dla każdego. Podręcznik Front-End Developera
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Jon Duckett
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-6.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        Tajniki C# i .NET Framework. Wydajne aplikacje dzięki zaawansowanym funkcjom języka C# i architektury .NET
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Marino Posadas
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-7.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        Sztuka podstępu. Łamałem ludzi, nie hasła
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Kevin D. Mitnick, William L. Simon
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="container">
+                    <figure class="image has-shadow has-margin-bottom">
+                        <img src="~/images/book-cover-8.jpg" alt="book cover">
+                    </figure>
+                    <p class="subtitle is-size-6 has-text-centered has-text-weight-semibold is-marginless">
+                        Kliknij tutaj, aby zabić wszystkich. Bezpieczeństwo i przetrwanie w hiperpołączonym świecie
+                    </p>
+                    <p class="has-text-centered is-size-7 has-text-grey is-italic has-text-weight-light">
+                        Bruce Schneier
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

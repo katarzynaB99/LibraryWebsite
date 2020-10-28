@@ -1,0 +1,212 @@
+﻿@page
+@model AtosLibrary.WebHost.CreateReaderModel
+@{
+    ViewData["Title"] = "New ReaderList | Atos Library - Best books in the world";
+}
+
+@section scripts{
+    @await Html.PartialAsync($"_ValidationScriptsPartial")
+}
+
+<section class="section has-margin-top has-background-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <!-- Create reader form -->
+            <div class="column is-6">
+                <div class="message">
+                    <!-- Form headline -->
+                    <div class="message-header is-uppercase">
+                        <p>Creating a new reader</p>
+                    </div>
+                    <div class="message-body has-background-white">
+                        <form method="post">
+                            <div class="columns is-multiline">
+                                <!-- Reader name -->
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.Name" class="label">
+                                            Name
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Name..."
+                                                   asp-for="ReaderModel.Name"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-font"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.Name" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reader surname -->
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.Surname" class="label">
+                                            Surname
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Surname..."
+                                                   asp-for="ReaderModel.Surname"
+                                                   required/><br/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-font"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.Name" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- ReaderList gender -->
+                                <div class="column is-one-third">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.Gender" class="label">
+                                            Gender
+                                        </label>
+                                        <div class="control">
+                                            <div class="select">
+                                                <select asp-for="ReaderModel.Gender"
+                                                        required>
+                                                    <option hidden disabled selected value=""> -- </option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Attack helicopter">Attack helicopter</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                <span asp-validation-for="ReaderModel.Gender" class="help is-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Date of birth -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.Birthday" class="label">
+                                            Date of birth
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="datetime"
+                                                   min="01-01-1920"
+                                                   max="@DateTime.Today"
+                                                   asp-for="ReaderModel.Birthday"
+                                                   placeholder="DD-MM-YYYY"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.Birthday" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Email -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.Email" class="label">
+                                            E-mail
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="email"
+                                                   placeholder="email@website.com"
+                                                   asp-for="ReaderModel.Email"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-at"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.Email" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Phone number -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.PhoneNumber" class="label">
+                                            Phone number
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="tel"
+                                                   pattern="[0-9]{9}"
+                                                   placeholder="123-456-789"
+                                                   asp-for="ReaderModel.PhoneNumber"/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-phone"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.PhoneNumber" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!--  Country -->
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.Country" class="label">
+                                            Country
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Country..."
+                                                   asp-for="ReaderModel.Country"/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-globe"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.Country" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- City -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="ReaderModel.City" class="label">
+                                            City
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text" placeholder="City..."
+                                                   asp-for="ReaderModel.City"/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </span>
+                                            <span asp-validation-for="ReaderModel.City" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Buttons -->
+                                <div class="column">
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <a class="button is-link is-light" href="/ReaderIndex">Cancel</a>
+                                        </div>
+                                        <div class="control">
+                                            <input type="submit" value="Add" class="button is-link"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3"></div>
+        </div>
+    </div>
+</section>

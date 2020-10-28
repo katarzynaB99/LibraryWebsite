@@ -1,0 +1,100 @@
+﻿@page
+@model ReserveBookModel
+@{
+    ViewData["Title"] = "Homepage | Atos Library - Best books in the world";
+}
+
+<section class="section has-margin-top has-background-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <!-- Reserve Book form -->
+            <div class="column is-6">
+                <div class="message">
+                    <!-- Form headline -->
+                    <div class="message-header is-uppercase">
+                        <p>Creating reservation</p>
+                    </div>
+                    <div class="message-body has-background-white">
+                        <form method="post">
+                            <div class="columns">
+                                <!-- Reader Name -->
+                                <div class="column">
+                                    <label asp-for="RecordModel.ReaderName" class="label">
+                                        Reader Name
+                                    </label>
+                                    <div class="control has-icons-left">
+                                        <input class="input"
+                                               type="text"
+                                               placeholder="Name..."
+                                               asp-for="RecordModel.ReaderName"
+                                               required />
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-font"></i>
+                                        </span>
+                                        <span asp-validation-for="RecordModel.ReaderName" class="help is-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <!-- Reader Surname -->
+                                <div class="column">
+                                    <label asp-for="RecordModel.ReaderSurname" class="label">
+                                        Reader Surname
+                                    </label>
+                                    <div class="control has-icons-left">
+                                        <input class="input"
+                                               type="text"
+                                               placeholder="Surname..."
+                                               asp-for="RecordModel.ReaderSurname"
+                                               required />
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-font"></i>
+                                        </span>
+                                        <span asp-validation-for="RecordModel.ReaderSurname" class="help is-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <!-- Reader Surname -->
+                                <div class="column">
+                                    <label asp-for="RecordModel.BookName" class="label">
+                                        Book Name
+                                    </label>
+                                    <div class="control has-icons-left">
+                                        <input class="input"
+                                               type="text"
+                                               placeholder="Book title..."
+                                               asp-for="RecordModel.BookName"
+                                               required />
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-font"></i>
+                                        </span>
+                                        <span asp-validation-for="RecordModel.BookName" class="help is-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Buttons -->
+                                <div class="column">
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <a class="button is-link is-light" href="/Index">Cancel</a>
+                                        </div>
+                                        <div class="control">
+                                            <input type="submit" value="Create" class="button is-link" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="column is-3"></div>
+        </div>
+    </div>
+
+</section>

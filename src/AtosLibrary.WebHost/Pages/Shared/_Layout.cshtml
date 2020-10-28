@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - AtosLibrary.WebHost</title>
+
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <!--BulmaJS-->
+    <script src="~/js/BulmaJS-0.10.3/dist/bulma.js"></script>
+    <!--Font Awesome Icons-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!--CSS Debugger-->
+    <!--<link rel="stylesheet" href="~/css/debug.css" />-->
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+</head>
+<body>
+<nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top" role="navigation" aria-label="main navigation">
+    <!-- Brand logo -->
+    <div class="navbar-brand">
+        <a class="navbar-item" asp-area="" asp-page="/Index">
+            <div class="media is-size-5 center">
+                <div class="media-left">
+                    <span class="icon">
+                        <i class="fas fa-book-open"></i>
+                    </span>
+                </div>
+                <div class="media-content">
+                    <p>Atos Library</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Icons for mobile devices -->
+        <a class="navbar-item is-hidden-desktop" asp-area="" asp-page="/Index">
+            <span class="icon is-size-5">
+                <i class="fas fa-home"></i>
+            </span>
+        </a>
+
+        <a class="navbar-item is-hidden-desktop" asp-area="" asp-page="/ReaderListIndex">
+            <span class="icon is-size-5">
+                <i class="fas fa-users"></i>
+            </span>
+        </a>
+
+        <a class="navbar-item is-hidden-desktop" asp-area="" asp-page="/BookListIndex">
+            <span class="icon is-size-5">
+                <i class="fas fa-book"></i>
+            </span>
+        </a>
+
+        <a class="navbar-item is-hidden-desktop" asp-area="" asp-page="/AllRecordsIndex">
+            <span class="icon is-size-5">
+                <i class="fas fa-tasks"></i>
+            </span>
+        </a>
+
+        <!-- Burger menu for mobile devices -->
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenuMore">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    
+    <!-- Menu contents -->
+    <div id="navMenuMore" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" asp-area="" asp-page="/Index">
+                Homepage
+            </a>
+
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" asp-area="" asp-page="/ReaderIndex">
+                    Readers
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" asp-area="" asp-page="/ReaderIndex">
+                        Reader  List
+                    </a>
+                    <a class="navbar-item" asp-area="" asp-page="/CreateReader">
+                        New Reader
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" asp-area="" asp-page="/BookIndex">
+                    Books
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" asp-area="" asp-page="/BookIndex">
+                        Book List
+                    </a>
+                    <a class="navbar-item" asp-area="" asp-page="/CreateBook">
+                        New Book
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item" asp-area="" asp-page="/ReserveBook">
+                        Reserve a Book
+                    </a>
+                </div>
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" asp-area="" asp-page="/AllRecordsIndex">
+                    Management
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" asp-area="" asp-page="/ReservationsIndex">
+                        Reservations
+                    </a>
+                    <a class="navbar-item" asp-area="" asp-page="/ActiveRentalsIndex">
+                        Active rentals
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item" asp-area="" asp-page="/AllRecordsIndex">
+                        All records
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button is-success is-uppercase" asp-area="" asp-page="/ReserveBook">Reserve a book</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+<!-- Rendering page body -->
+<div class="main">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+    
+<!-- Page Footer -->
+<footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <a asp-area="" asp-page="/Privacy">Privacy Policy</a> | &copy;2020 Atos Library
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

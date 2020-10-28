@@ -1,0 +1,207 @@
+﻿@page
+@model AtosLibrary.WebHost.Pages.CreateBookModel
+@{
+    ViewData["Title"] = "Create BookList";
+}
+
+@section scripts{
+    @await Html.PartialAsync($"_ValidationScriptsPartial")
+}
+
+<section class="section has-margin-top has-background-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <div class="column is-6">
+                <!-- Create book form -->
+                <div class="message">
+                    <!-- Form headline -->
+                    <div class="message-header is-uppercase">
+                        <p>Creating a new book</p>
+                    </div>
+                    <div class="message-body has-background-white">
+                        <form method="post">
+
+                            <div class="columns is-multiline">
+                                <!-- BookList name -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="BookModel.Name" class="label">
+                                            Title
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Title..."
+                                                   asp-for="BookModel.Name"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-book"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.Name" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- BookList author -->
+                                <div class="column is-two-thirds">
+                                    <div class="field">
+                                        <label asp-for="BookModel.Author" class="label">
+                                            Author
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Author(s)..."
+                                                   asp-for="BookModel.Author"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-feather"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.Author" class="validate-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Available copies -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="BookModel.Number" class="label">
+                                            Copies
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="number"
+                                                   placeholder="Number..."
+                                                   asp-for="BookModel.Number"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-hashtag"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.Number" class="validate-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Number of pages -->
+                                <div class="column is-one-third">
+                                    <div class="field">
+                                        <label asp-for="BookModel.PageNumber" class="label">
+                                            Pages
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="number"
+                                                   placeholder="Number..."
+                                                   asp-for="BookModel.PageNumber"/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-copy"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.PageNumber" class="validate-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Genre -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="BookModel.Genre" class="label">
+                                            Genre
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Genre..."
+                                                   asp-for="BookModel.Genre"
+                                                   required/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-bookmark"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.Genre" class="validate-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline">
+                                <!-- Publisher -->
+                                <div class="column is-two-thirds">
+                                    <div class="field">
+                                        <label asp-for="BookModel.Publisher" class="label">
+                                            Publisher
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="text"
+                                                   placeholder="Publisher..."
+                                                   asp-for="BookModel.Publisher"/>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-university"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.Publisher" class="validate-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Publication year -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="BookModel.PublicationYear" class="label">
+                                            Publ. year
+                                        </label>
+                                        <div class="control has-icons-left">
+                                            <input class="input"
+                                                   type="number"
+                                                   pattern="[1-2]{1}+[0-9]{3}"
+                                                   placeholder="Year..."
+                                                   asp-for="BookModel.PublicationYear"/>
+                                            <span class="icon is-small is-left">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </span>
+                                            <span asp-validation-for="BookModel.PublicationYear" class="validate-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Description -->
+                                <div class="column">
+                                    <div class="field">
+                                        <label asp-for="BookModel.Description" class="label">
+                                            Description
+                                        </label>
+                                        <div class="control">
+                                            <textarea class="textarea"
+                                                      rows="4"
+                                                      type="text"
+                                                      placeholder="Description..."
+                                                      asp-for="BookModel.Description"
+                                                      required></textarea>
+                                            <span asp-validation-for="BookModel.Description" class="help is-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns is-multiline">
+                                <!-- Buttons -->
+                                <div class="column">
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <a class="button is-link is-light" href="/BookIndex">Cancel</a>
+                                        </div>
+                                        <div class="control">
+                                            <input type="submit" value="Add" class="button is-link"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3"></div>
+        </div>
+    </div>
+</section>

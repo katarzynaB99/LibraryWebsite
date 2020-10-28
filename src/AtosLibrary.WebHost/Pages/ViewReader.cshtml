@@ -1,0 +1,92 @@
+﻿@page "{Id:int}"
+@using System.Globalization
+@model AtosLibrary.WebHost.Pages.ViewReaderModel
+@{
+    ViewData["Title"] = "Reader Profile | Atos Library - Best books in the world";
+}
+
+<section class="section has-margin-top has-background-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <!-- ReaderList details box -->
+            <div class="column is-6">
+                <div class="message">
+                    <div class="message-header is-uppercase">
+                        <div class="media">
+                            <div class="media-left">
+                                <!-- Box headline -->
+                                <div class="container">
+                                    <span class="icon is-block">
+                                        <i class="fas fa-user-circle fa-4x"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="media-content" style="margin-left: 2rem;">
+                                <!-- ReaderList name -->
+                                <p class="is-size-4 has-text-white is-uppercase has-text-weight-bold">@this.ViewData.Model.ReaderModel.Name</p>
+                                <!-- ReaderList surname -->
+                                <p class="is-size-4 has-text-white is-uppercase has-text-weight-bold">@this.ViewData.Model.ReaderModel.Surname</p>
+                                <!-- ReaderList ID -->
+                                <p class="has-text-grey is-size-7 has-text-weight-light">ID: @this.ViewData.Model.ReaderModel.Id</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-body has-background-white">
+                        <div class="columns">
+                            <div class="column"></div>
+                            <div class="column is-10">
+                                <!-- Gender -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Gender</p>
+                                <p class="is-size-6">@this.ViewData.Model.ReaderModel.Gender</p>
+                                <br />
+                                <!-- Birthday -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Date of birth</p>
+                                <p class="is-size-6">@this.ViewData.Model.ReaderModel.Birthday.ToString("dd-MM-yyyy", DateTimeFormatInfo.InvariantInfo)</p>
+                                <br />
+                                <!-- Email address -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Email address</p>
+                                <p class="is-size-6">@this.ViewData.Model.ReaderModel.Email</p>
+                                <br />
+                                <!-- Phone number -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Phone number</p>
+                                <p class="is-size-6">@this.ViewData.Model.ReaderModel.PhoneNumber</p>
+                                <br />
+                                <!-- Country -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Country</p>
+                                <p class="is-size-6">@this.ViewData.Model.ReaderModel.Country</p>
+                                <br />
+                                <!-- City -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">City</p>
+                                <p class="is-size-6">@this.ViewData.Model.ReaderModel.City</p>
+                                <br />
+                                <!-- Buttons -->
+                                <form method="post" asp-page-handler="Edit">
+                                    <div class="field is-grouped is-right">
+                                        <div class="control">
+                                            <a class="button is-link is-light is-uppercase" asp-page="/ReaderIndex">
+                                                Go Back
+                                            </a>
+                                        </div>
+                                        <div class="control">
+                                            <a class="button is-link is-light is-uppercase" asp-page="">
+                                                Rent Book
+                                            </a>
+                                        </div>
+                                        <div class="control">
+                                            <button class="button is-link is-uppercase">
+                                                Edit reader
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3"></div>
+        </div>
+    </div>
+</section>

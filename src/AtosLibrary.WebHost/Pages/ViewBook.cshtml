@@ -1,0 +1,88 @@
+﻿@page "{Id:int}"
+@using AtosLibrary.Presentation.Reader
+@model AtosLibrary.WebHost.Pages.ViewBookModel
+@{
+    ViewData["Title"] = "BookList Details | Atos Library - Best books in the world";
+}
+
+<section class="section has-margin-top has-background-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <!-- View book details box-->
+            <div class="column is-6">
+                <div class="message">
+                    <div class="message-header is-uppercase">
+                        <div class="media">
+                            <div class="media-left">
+                                <!-- Box headline -->
+                                <div class="container">
+                                    <span class="icon is-block">
+                                        <i class="fa fa-book fa-4x"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="media-content" style="margin-left: 2rem;">
+                                <!-- BookList title -->
+                                <p class="is-size-4 has-text-white is-uppercase has-text-weight-bold">@this.ViewData.Model.BookModel.Name</p>
+                                <!-- BookList author -->
+                                <p class="has-text-grey-light is-italic is-size-6 has-text-weight-normal">@this.ViewData.Model.BookModel.Author</p>
+                                <!-- BookList ID -->
+                                <p class="has-text-grey is-size-7 has-text-weight-light">ID: @this.ViewData.Model.BookModel.Id</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-body has-background-white">
+                        <div class="columns">
+                            <div class="column"></div>
+                            <div class="column is-10">
+                                <!-- Genre -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Genre</p>
+                                <p class="is-size-6">@this.ViewData.Model.BookModel.Genre</p>
+                                <br />
+                                <!-- Publisher -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Publisher</p>
+                                <p class="is-size-6">@this.ViewData.Model.BookModel.Publisher</p>
+                                <br />
+                                <!-- Publication year -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Publication Year</p>
+                                <p class="is-size-6">@this.ViewData.Model.BookModel.PublicationYear</p>
+                                <br />
+                                <!-- Available copies -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Available copies</p>
+                                <p class="is-size-6">@this.ViewData.Model.BookModel.Number</p>
+                                <br />
+                                <!-- Description -->
+                                <p class="label is-size-7 is-uppercase has-text-grey-light">Description</p>
+                                <p class="is-size-6">@this.ViewData.Model.BookModel.Description</p>
+                                <br />
+                                <!-- Buttons -->
+                                <form method="post" asp-page-handler="Edit">
+                                    <div class="field is-grouped is-right">
+                                        <div class="control">
+                                            <a class="button is-link is-light is-uppercase" asp-page="/BookdIndex">
+                                                Go Back
+                                            </a>
+                                        </div>
+                                        <div class="control">
+                                            <a class="button is-link is-light is-uppercase" asp-page="">
+                                                Rent
+                                            </a>
+                                        </div>
+                                        <div class="control">
+                                            <button class="button is-link is-uppercase">
+                                                Edit book
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3"></div>
+        </div>
+    </div>
+</section>
