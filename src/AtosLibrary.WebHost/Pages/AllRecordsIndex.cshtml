@@ -73,25 +73,6 @@
                                 <td>@record.RentStart.Value.ToShortDateString()</td>
                                 <td>@record.RentEnd.Value.ToShortDateString()</td>
                             }
-                            <td>
-                                <div class="buttons are-small">
-                                    <!-- View record -->
-                                    <a class="button is-light" asp-page="/ViewRecord" asp-route-id="@record.RecordId">
-                                        <span class="icon is-small">
-                                            <i class="fa fa-eye"></i>
-                                        </span>
-                                    </a>
-                                    @if (record.Status != "Returned")
-                                    {
-                                        <!-- Edit record -->
-                                        <a class="button is-info" asp-page="/EditRecord">
-                                            <span class="icon is-small">
-                                                <i class="fa fa-edit"></i>
-                                            </span>
-                                        </a>
-                                    }
-                                </div>
-                            </td>
                         </tr>
                     }
                     </tbody>

@@ -64,12 +64,6 @@
                                     <td>@record.Status</td>
                                     <td>
                                         <div class="buttons are-small">
-                                            <!-- View record -->
-                                            <a class="button is-light" asp-page="/ViewRecord" asp-route-id="@record.RecordId">
-                                                <span class="icon is-small">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </a>
                                             @if (record.Status == "New")
                                             {
                                                 <!-- Prepare book -->
